@@ -19,6 +19,13 @@ cargo run
 - Points system for ZYN product purchases
 - JSON-based song format
 
+## How it Works
+
+- `cpal` captures audio samples as `f32` values between -1.0 and 1.0.
+- We convert them to `i16` before writing, since WAV commonly stores 16-bit PCM.
+- `hound` handles the WAV file format and writes samples sequentially.
+- After 5 seconds, the program finalizes the file and closes it.
+
 ## Usage
 
 1. Run the application
